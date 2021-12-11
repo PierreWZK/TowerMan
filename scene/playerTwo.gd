@@ -24,3 +24,6 @@ func _physics_process(_delta):
 		$Sprite/AnimationPlayer.play("jump");
 	else:
 		$Sprite/AnimationPlayer.play('idle');
+
+	if Input.is_action_pressed("scene_change"):
+		get_tree().change_scene("res://scene/level_jump.tscn");
