@@ -24,3 +24,4 @@ func _physics_process(_delta):
 		$Sprite/AnimationPlayer.play("jump");
 	else:
 		$Sprite/AnimationPlayer.play('idle');
+# TileSet
