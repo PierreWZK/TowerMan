@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var speed = 200
-var jump_speed = 420
+var jump_speed = 370
 var gravity = 20
 var velocity = Vector2()
 var jump = 0;

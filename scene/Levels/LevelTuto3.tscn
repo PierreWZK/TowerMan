@@ -3477,6 +3477,9 @@ points = PoolVector2Array( 48, 48, 0, 48, 0, 16, 48, 0 )
 } ]
 179/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=134]
+extents = Vector2( 6.5, 23 )
+
 [sub_resource type="AnimatedTexture" id=128]
 
 [sub_resource type="Animation" id=129]
@@ -3560,9 +3563,6 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=133]
 extents = Vector2( 9.75, 16 )
 
-[sub_resource type="RectangleShape2D" id=134]
-extents = Vector2( 6.5, 23 )
-
 [node name="level_tuto3" type="Node2D"]
 
 [node name="BackgroundGrotteRed" type="Sprite" parent="."]
@@ -3584,6 +3584,22 @@ position = Vector2( 88, 523 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 128, 29, 51, 56 )
+
+[node name="doorDroite" type="Area2D" parent="."]
+position = Vector2( 919, 479 )
+script = ExtResource( 6 )
+
+[node name="PorteDroite" type="Sprite" parent="doorDroite"]
+position = Vector2( 4, 44 )
+scale = Vector2( 1, 0.929847 )
+texture = ExtResource( 5 )
+offset = Vector2( -2, 2.07408 )
+region_enabled = true
+region_rect = Rect2( 67, 29, 51, 56 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorDroite"]
+position = Vector2( 2, 46 )
+shape = SubResource( 134 )
 
 [node name="test" type="KinematicBody2D" parent="."]
 position = Vector2( 55, 405 )
@@ -3611,19 +3627,3 @@ anims/run = SubResource( 132 )
 position = Vector2( 31.5881, 73.5882 )
 shape = SubResource( 133 )
 one_way_collision_margin = 0.0
-
-[node name="doorDroite" type="Area2D" parent="."]
-position = Vector2( 919, 479 )
-script = ExtResource( 6 )
-
-[node name="PorteDroite" type="Sprite" parent="doorDroite"]
-position = Vector2( 4, 44 )
-scale = Vector2( 1, 0.929847 )
-texture = ExtResource( 5 )
-offset = Vector2( -2, 2.07408 )
-region_enabled = true
-region_rect = Rect2( 67, 29, 51, 56 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doorDroite"]
-position = Vector2( 2, 46 )
-shape = SubResource( 134 )

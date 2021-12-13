@@ -7,7 +7,7 @@
 [ext_resource path="res://asset/Tiles/Medieval_props_free.png" type="Texture" id=5]
 [ext_resource path="res://asset/Tiles/Medieval_tiles_free_2.0.png" type="Texture" id=6]
 [ext_resource path="res://asset/Text/logo_TowerMan.png" type="Texture" id=7]
-[ext_resource path="res://asset/Text/press-button-c.png" type="Texture" id=8]
+[ext_resource path="res://Commands.png" type="Texture" id=8]
 [ext_resource path="res://asset/Text/TOWERMAN.png" type="Texture" id=9]
 
 [sub_resource type="GDScript" id=126]
@@ -3682,9 +3682,24 @@ position = Vector2( 31.5881, 73.5882 )
 shape = SubResource( 1 )
 one_way_collision_margin = 0.0
 
-[node name="Press-button-c" type="Sprite" parent="."]
-position = Vector2( 517, 0 )
-scale = Vector2( 0.621988, 0.621988 )
+[node name="Label" type="Label" parent="."]
+margin_left = 777.0
+margin_top = -138.0
+margin_right = 854.0
+margin_bottom = -107.0
+rect_pivot_offset = Vector2( 0, 23 )
+text = "TUTO"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Commands" type="Sprite" parent="."]
+position = Vector2( 428, 115 )
+scale = Vector2( 0.850904, 0.850904 )
 texture = ExtResource( 8 )
 
 [connection signal="body_entered" from="doorDroite" to="." method="_on_door_body_entered"]
