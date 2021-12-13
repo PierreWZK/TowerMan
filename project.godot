@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Tower Man"
-run/main_scene="res://scene/Node2D.tscn"
+run/main_scene="res://scene/LevelOrigin.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -37,6 +37,11 @@ jump={
 scene_change={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":67,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+respawn={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

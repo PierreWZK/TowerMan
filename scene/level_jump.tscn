@@ -1,9 +1,9 @@
 [gd_scene load_steps=118 format=2]
 
-[ext_resource path="res://scene/playerTwo.gd" type="Script" id=1]
+[ext_resource path="res://code/playerscript.gd" type="Script" id=1]
 [ext_resource path="res://asset/Tiles/Medieval_tiles_free_2.0.png" type="Texture" id=2]
 [ext_resource path="res://asset/aPlayer/Adventurer Sprite Sheet v1.3.png" type="Texture" id=3]
-[ext_resource path="res://asset/aBackground/Background_Grotte.png" type="Texture" id=4]
+[ext_resource path="res://asset/aBackground/Background_Grotte_red.jpg" type="Texture" id=5]
 
 [sub_resource type="AnimatedTexture" id=127]
 
@@ -3560,10 +3560,10 @@ points = PoolVector2Array( 48, 48, 0, 48, 0, 16, 48, 0 )
 
 [node name="level_2" type="Node2D"]
 
-[node name="BackgroundGrotte" type="Sprite" parent="."]
-position = Vector2( 490.667, 298.25 )
+[node name="BackgroundGrotteRed" type="Sprite" parent="."]
+position = Vector2( 485.111, 298.75 )
 scale = Vector2( 0.563426, 0.563426 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="test" type="KinematicBody2D" parent="."]
 position = Vector2( 109, 458 )
