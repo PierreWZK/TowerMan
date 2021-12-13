@@ -1,9 +1,11 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://asset/Tiles/Medieval_tiles_free_2.0.png" type="Texture" id=1]
 [ext_resource path="res://code/playerscript.gd" type="Script" id=2]
 [ext_resource path="res://asset/aPlayer/Adventurer Sprite Sheet v1.3.png" type="Texture" id=3]
 [ext_resource path="res://asset/aBackground/Background_Grotte_red.jpg" type="Texture" id=4]
+[ext_resource path="res://asset/Tiles/Medieval_props_free.png" type="Texture" id=5]
+[ext_resource path="res://code/Levels/doorDroite-Tuto2.gd" type="Script" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=134]
 points = PoolVector2Array( 48, 48, 0, 48, 0, 40, 48, 40 )
@@ -3475,9 +3477,9 @@ points = PoolVector2Array( 48, 48, 0, 48, 0, 16, 48, 0 )
 } ]
 179/z_index = 0
 
-[sub_resource type="AnimatedTexture" id=128]
+[sub_resource type="AnimatedTexture" id=240]
 
-[sub_resource type="Animation" id=129]
+[sub_resource type="Animation" id=241]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame_coords")
@@ -3492,7 +3494,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 5 ) ]
 }
 
-[sub_resource type="Animation" id=130]
+[sub_resource type="Animation" id=242]
 resource_name = "idle"
 length = 1.5
 loop = true
@@ -3521,7 +3523,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 3, 0 ), Vector2( 4, 0 ), Vector2( 5, 0 ), Vector2( 6, 0 ), Vector2( 7, 0 ), Vector2( 8, 0 ), Vector2( 9, 0 ), Vector2( 10, 0 ), Vector2( 11, 0 ), Vector2( 12, 0 ), Vector2( 13, 0 ), Vector2( 14, 0 ) ]
 }
 
-[sub_resource type="Animation" id=131]
+[sub_resource type="Animation" id=243]
 resource_name = "jump"
 step = 0.2
 tracks/0/type = "value"
@@ -3537,7 +3539,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 5 ), Vector2( 2, 5 ), Vector2( 3, 5 ), Vector2( 4, 5 ), Vector2( 5, 5 ) ]
 }
 
-[sub_resource type="Animation" id=132]
+[sub_resource type="Animation" id=244]
 resource_name = "run"
 length = 0.6
 loop = true
@@ -3555,8 +3557,11 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3, 1 ), Vector2( 4, 1 ), Vector2( 5, 1 ), Vector2( 6, 1 ), Vector2( 7, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=133]
+[sub_resource type="RectangleShape2D" id=245]
 extents = Vector2( 9.75, 16 )
+
+[sub_resource type="RectangleShape2D" id=246]
+extents = Vector2( 6.5, 23 )
 
 [node name="level_tuto2" type="Node2D"]
 
@@ -3571,17 +3576,23 @@ tile_set = SubResource( 127 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 64, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -65538, 90, 0, -131071, 90, 0, -131068, 90, 0, -131065, 90, 0, -131062, 90, 0, -131059, 90, 0, -131056, 90, 0, -131053, 90, 0, -131050, 90, 0, -131047, 90, 0, -131044, 90, 0, -131041, 90, 0, -131038, 90, 0, -131035, 90, 0, -131032, 90, 0, -131029, 90, 0, -131026, 90, 0, -131023, 90, 0, -131020, 90, 0, -131017, 90, 0, -131014, 90, 0, -131011, 90, 0, 131070, 89, 0, 65537, 1610612822, 0, 65540, 89, 0, 65543, 88, 0, 65546, 1610612823, 0, 65549, 1610612824, 0, 65552, 101, 0, 65555, 1610612824, 0, 65558, 1610612822, 0, 65561, 1610612824, 0, 65564, 101, 0, 65567, 1610612823, 0, 65570, 1610612822, 0, 65573, 1610612837, 0, 65576, 86, 0, 65579, 1610612822, 0, 65582, 89, 0, 65585, 86, 0, 65588, 87, 0, 65591, 86, 0, 65594, 1610612822, 0, 65597, 86, 0, 65600, 90, 0, 327678, 90, 0, 262145, 1610612837, 0, 262205, 87, 0, 262208, 90, 0, 524286, 90, 0, 458753, 89, 0, 458813, 1610612825, 0, 458816, 90, 0, 720894, 90, 0, 655361, 87, 0, 655421, 87, 0, 655424, 90, 0, 917502, 90, 0, 851969, 1610612822, 0, 852029, 1610612824, 0, 852032, 90, 0, 1114110, 90, 0, 1048577, 87, 0, 1048637, 87, 0, 1048640, 90, 0, 1310718, 90, 0, 1245185, 88, 0, 1245245, 1610612825, 0, 1245248, 90, 0, 1507326, 90, 0, 1441793, 1610612825, 0, 1441853, 87, 0, 1441856, 90, 0, 1703934, 90, 0, 1638401, 1610612822, 0, 1638461, 89, 0, 1638464, 90, 0, 1900542, 90, 0, 1835009, 1610612823, 0, 1835069, 1610612824, 0, 1835072, 90, 0, 2097150, 90, 0, 2031617, 1610612825, 0, 2031641, 40, 0, 2031644, 40, 0, 2031647, 39, 0, 2031656, 39, 0, 2031659, 40, 0, 2031662, 1610612815, 0, 2031665, 1610612807, 0, 2031668, 35, 0, 2031677, 89, 0, 2031680, 90, 0, 2293758, 1610612826, 0, 2228225, 1610612824, 0, 2228228, 39, 0, 2228231, 40, 0, 2228234, 40, 0, 2228237, 39, 0, 2228249, 87, 0, 2228252, 89, 0, 2228255, 86, 0, 2228264, 87, 0, 2228267, 89, 0, 2228270, 1610612823, 0, 2228273, 1610612823, 0, 2228276, 88, 0, 2228279, 40, 0, 2228282, 39, 0, 2228285, 89, 0, 2228288, 90, 0, 2490366, 90, 0, 2424833, 90, 0, 2424836, 90, 0, 2424839, 90, 0, 2424842, 90, 0, 2424845, 90, 0, 2424857, 90, 0, 2424860, 90, 0, 2424863, 90, 0, 2424872, 90, 0, 2424875, 90, 0, 2424878, 90, 0, 2424881, 90, 0, 2424884, 90, 0, 2424887, 90, 0, 2424890, 90, 0, 2424893, 90, 0 )
+tile_data = PoolIntArray( -65538, 90, 0, -131071, 90, 0, -131068, 90, 0, -131065, 90, 0, -131062, 90, 0, -131059, 90, 0, -131056, 90, 0, -131053, 90, 0, -131050, 90, 0, -131047, 90, 0, -131044, 90, 0, -131041, 90, 0, -131038, 90, 0, -131035, 90, 0, -131032, 90, 0, -131029, 90, 0, -131026, 90, 0, -131023, 90, 0, -131020, 90, 0, -131017, 90, 0, -131014, 90, 0, -131011, 90, 0, -131008, 5, 0, 131070, 89, 0, 65537, 1610612822, 0, 65540, 89, 0, 65543, 88, 0, 65546, 1610612823, 0, 65549, 1610612824, 0, 65552, 101, 0, 65555, 1610612824, 0, 65558, 1610612822, 0, 65561, 1610612824, 0, 65564, 101, 0, 65567, 1610612823, 0, 65570, 1610612822, 0, 65573, 1610612837, 0, 65576, 86, 0, 65579, 1610612822, 0, 65582, 89, 0, 65585, 86, 0, 65588, 87, 0, 65591, 86, 0, 65594, 1610612822, 0, 65597, 86, 0, 65600, 90, 0, 327678, 90, 0, 262145, 1610612837, 0, 262205, 87, 0, 262208, 90, 0, 524286, 90, 0, 458753, 89, 0, 458813, 1610612825, 0, 458816, 90, 0, 720894, 90, 0, 655361, 87, 0, 655421, 87, 0, 655424, 90, 0, 917502, 90, 0, 851969, 1610612822, 0, 852029, 1610612824, 0, 852032, 90, 0, 1114110, 90, 0, 1048577, 87, 0, 1048637, 87, 0, 1048640, 90, 0, 1310718, 90, 0, 1245185, 88, 0, 1245245, 1610612825, 0, 1245248, 90, 0, 1507326, 90, 0, 1441793, 1610612825, 0, 1441853, 87, 0, 1441856, 90, 0, 1703934, 90, 0, 1638401, 1610612822, 0, 1638461, 89, 0, 1638464, 90, 0, 1900542, 90, 0, 1835009, 1610612823, 0, 1835069, 1610612824, 0, 1835072, 90, 0, 2097150, 90, 0, 2031617, 1610612825, 0, 2031641, 40, 0, 2031644, 40, 0, 2031647, 39, 0, 2031656, 39, 0, 2031659, 40, 0, 2031662, 1610612815, 0, 2031665, 1610612807, 0, 2031668, 35, 0, 2031677, 89, 0, 2031680, 90, 0, 2293758, 1610612826, 0, 2228225, 1610612824, 0, 2228228, 39, 0, 2228231, 40, 0, 2228234, 40, 0, 2228237, 39, 0, 2228249, 87, 0, 2228252, 89, 0, 2228255, 86, 0, 2228264, 87, 0, 2228267, 89, 0, 2228270, 1610612823, 0, 2228273, 1610612823, 0, 2228276, 88, 0, 2228279, 40, 0, 2228282, 39, 0, 2228285, 89, 0, 2228288, 90, 0, 2490366, 90, 0, 2424833, 90, 0, 2424836, 90, 0, 2424839, 90, 0, 2424842, 90, 0, 2424845, 90, 0, 2424857, 90, 0, 2424860, 90, 0, 2424863, 90, 0, 2424872, 90, 0, 2424875, 90, 0, 2424878, 90, 0, 2424881, 90, 0, 2424884, 90, 0, 2424887, 90, 0, 2424890, 90, 0, 2424893, 90, 0, 2424896, -1610612731, 0 )
+
+[node name="DoorLeft" type="Sprite" parent="."]
+position = Vector2( 88, 523 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 128, 29, 51, 56 )
 
 [node name="test" type="KinematicBody2D" parent="."]
-position = Vector2( 109, 458 )
+position = Vector2( 55, 405 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="test"]
 position = Vector2( 34.5881, 69.5882 )
 scale = Vector2( 1.91176, 1.91176 )
 texture = ExtResource( 3 )
-normal_map = SubResource( 128 )
+normal_map = SubResource( 240 )
 hframes = 13
 vframes = 13
 frame = 65
@@ -3590,12 +3601,28 @@ region_rect = Rect2( -1.19857, 3.22582, 419.559, 418.411 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="test/Sprite"]
 root_node = NodePath("../..")
-anims/RESET = SubResource( 129 )
-anims/idle = SubResource( 130 )
-anims/jump = SubResource( 131 )
-anims/run = SubResource( 132 )
+anims/RESET = SubResource( 241 )
+anims/idle = SubResource( 242 )
+anims/jump = SubResource( 243 )
+anims/run = SubResource( 244 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
 position = Vector2( 31.5881, 73.5882 )
-shape = SubResource( 133 )
+shape = SubResource( 245 )
 one_way_collision_margin = 0.0
+
+[node name="doorDroite" type="Area2D" parent="."]
+position = Vector2( 919, 479 )
+script = ExtResource( 6 )
+
+[node name="PorteDroite" type="Sprite" parent="doorDroite"]
+position = Vector2( 4, 44 )
+scale = Vector2( 1, 0.929847 )
+texture = ExtResource( 5 )
+offset = Vector2( -2, 2.07408 )
+region_enabled = true
+region_rect = Rect2( 67, 29, 51, 56 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorDroite"]
+position = Vector2( 2, 46 )
+shape = SubResource( 246 )
