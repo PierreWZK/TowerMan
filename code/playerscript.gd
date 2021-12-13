@@ -62,3 +62,13 @@ func change_scene_respawn():
 		
 	if Input.is_action_pressed("respawn"):
 		get_tree().reload_current_scene();
+
+var i:=0;
+var is_hit=false;
+func hit():
+	if is_hit:return
+	is_hit=true;
+	$Sprite.modulate=Color.red;
+	yield(get_tree().create_timer(0.3), "timeout");
+	$Sprite.modulate=Color.red;
+	is_hit=false;
