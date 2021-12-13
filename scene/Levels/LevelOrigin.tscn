@@ -2,8 +2,8 @@
 
 [ext_resource path="res://asset/aPlayer/Adventurer Sprite Sheet v1.3.png" type="Texture" id=1]
 [ext_resource path="res://code/playerscript.gd" type="Script" id=2]
-[ext_resource path="res://code/doorDroite.gd" type="Script" id=3]
-[ext_resource path="res://code/doorGauche.gd" type="Script" id=4]
+[ext_resource path="res://code/Level/doorR-Origin.gd" type="Script" id=3]
+[ext_resource path="res://code/Level/doorL-Origin.gd" type="Script" id=4]
 [ext_resource path="res://asset/Tiles/Medieval_props_free.png" type="Texture" id=5]
 [ext_resource path="res://asset/Tiles/Medieval_tiles_free_2.0.png" type="Texture" id=6]
 [ext_resource path="res://asset/Text/logo_TowerMan.png" type="Texture" id=7]
