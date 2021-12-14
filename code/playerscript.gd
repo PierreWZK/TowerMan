@@ -24,18 +24,16 @@ func mouvements():
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	#DOUBLE SAUT
-	if Input.is_action_pressed("jump"):
+	if Input.is_action_just_pressed("jump"):
 		if is_on_floor() and jump==0: 
 			velocity.y = -jump_speed;
 			jump=2
-			yield(get_tree().create_timer(0.5), "timeout");
 			jump = 1;
 	
 		elif !is_on_floor() and jump==1:
 			$Sprite/AnimationPlayer.play("double-jump");
 			velocity.y = -jump_speed;
 			jump=2;
-			yield(get_tree().create_timer(0.5), "timeout");
 			jump = 0;
 			
 	elif jump==1 and is_on_floor():
@@ -58,7 +56,7 @@ func anims():
 func change_scene_respawn():
 	#SCENE CHANGE TUTO
 	if Input.is_action_pressed("scene_change"):
-		get_tree().change_scene("res://scene/level_tuto3.tscn");
+		get_tree().change_scene("res://scene/LevelsOthers/LevelTuto3.tscn");
 		
 	if Input.is_action_pressed("respawn"):
 		get_tree().reload_current_scene();

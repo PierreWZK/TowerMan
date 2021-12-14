@@ -5,4 +5,4 @@ func _ready():
 
 func _input(event):
 		if get_overlapping_bodies().size() > 0:
-			get_tree().change_scene("res://scene/Levels/LevelTuto2.tscn");
+			get_tree().change_scene("res://scene/LevelsOthers/LevelOrigin.tscn");
