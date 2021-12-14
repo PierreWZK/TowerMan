@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=2]
+[gd_scene load_steps=128 format=2]
 
 [ext_resource path="res://code/Levels/Origin/doorL-Origin.gd" type="Script" id=1]
 [ext_resource path="res://code/Levels/Origin/doorR-Origin.gd" type="Script" id=2]
@@ -9,14 +9,6 @@
 [ext_resource path="res://asset/Tiles/Medieval_tiles_free_2.0.png" type="Texture" id=7]
 [ext_resource path="res://asset/Tiles/Medieval_props_free.png" type="Texture" id=8]
 [ext_resource path="res://code/Death Zone.gd" type="Script" id=9]
-
-[sub_resource type="GDScript" id=126]
-script/source = "extends Node2D
-
-
-func _on_Spikes_body_entered(body):
-	pass # Replace with function body.
-"
 
 [sub_resource type="ConvexPolygonShape2D" id=236]
 points = PoolVector2Array( 48, 48, 0, 48, 0, 40, 48, 40 )
@@ -3650,7 +3642,6 @@ extents = Vector2( 9.75, 16 )
 
 [node name="Level 1" type="Node2D"]
 position = Vector2( 28, 399 )
-script = SubResource( 126 )
 
 [node name="Background_blue" type="TileMap" parent="."]
 position = Vector2( 520.732, 0 )
@@ -3677,22 +3668,13 @@ scale = Vector2( 1.19252, 1.19252 )
 texture = ExtResource( 6 )
 
 [node name="Text-COMMANDS" type="Sprite" parent="."]
-visible = false
 position = Vector2( 428, 115 )
 scale = Vector2( 0.850904, 0.850904 )
 texture = ExtResource( 3 )
 
 [node name="Death zone" type="Area2D" parent="."]
-position = Vector2( -140, 214 )
+position = Vector2( -140, 49 )
 script = ExtResource( 9 )
-
-[node name="sprite" type="Sprite" parent="Death zone"]
-position = Vector2( 845, 230 )
-scale = Vector2( 1, 0.929847 )
-texture = ExtResource( 7 )
-offset = Vector2( -2, 2.07408 )
-region_enabled = true
-region_rect = Rect2( 594, 430, 45, 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Death zone"]
 position = Vector2( 596.5, 234 )
@@ -3770,9 +3752,9 @@ one_way_collision_margin = 0.0
 
 [node name="Label" type="Label" parent="."]
 margin_left = 777.0
-margin_top = -138.0
+margin_top = -140.0
 margin_right = 854.0
-margin_bottom = -107.0
+margin_bottom = -109.0
 rect_pivot_offset = Vector2( 0, 23 )
 text = "TUTO"
 align = 1
@@ -3783,6 +3765,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label2" type="Label" parent="."]
+margin_left = 105.0
+margin_top = -141.0
+margin_right = 182.0
+margin_bottom = -110.0
+rect_pivot_offset = Vector2( 0, 23 )
+text = "Histoire"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="body_entered" from="Death zone" to="." method="_on_door_body_entered"]
+[connection signal="body_entered" from="Death zone" to="Death zone" method="_on_Death_zone_body_entered"]
 [connection signal="body_entered" from="doorDroite" to="." method="_on_door_body_entered"]
 [connection signal="body_entered" from="doorGauche" to="." method="_on_door_body_entered"]
