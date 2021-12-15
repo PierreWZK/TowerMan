@@ -56,7 +56,7 @@ func anims():
 func change_scene_respawn():
 	#SCENE CHANGE TUTO
 	if Input.is_action_pressed("scene_change"):
-		get_tree().change_scene("res://scene/Levels/Level3.tscn");
+		get_tree().change_scene("res://scene/Levels/Level4.tscn");
 		
 	if Input.is_action_pressed("respawn"):
 		get_tree().reload_current_scene();

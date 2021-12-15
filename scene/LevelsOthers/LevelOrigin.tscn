@@ -3668,6 +3668,7 @@ scale = Vector2( 1.19252, 1.19252 )
 texture = ExtResource( 6 )
 
 [node name="Text-COMMANDS" type="Sprite" parent="."]
+visible = false
 position = Vector2( 428, 115 )
 scale = Vector2( 0.850904, 0.850904 )
 texture = ExtResource( 3 )

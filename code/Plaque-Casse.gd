@@ -6,7 +6,7 @@ func _ready():
 var in_zone = false;
 func _on_Plaquecasse_body_entered(body):
 	in_zone=true;
-	yield(get_tree().create_timer(2), "timeout");
+	yield(get_tree().create_timer(1.5), "timeout");
 	in_platform();
 
 func _on_Plaquecasse_body_exited(body):
