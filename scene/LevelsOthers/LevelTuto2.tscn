@@ -1,4 +1,4 @@
-[gd_scene load_steps=235 format=2]
+[gd_scene load_steps=237 format=2]
 
 [ext_resource path="res://asset/Tiles/Medieval_tiles_free_2.0.png" type="Texture" id=1]
 [ext_resource path="res://code/playerscript.gd" type="Script" id=2]
@@ -3482,9 +3482,9 @@ points = PoolVector2Array( 48, 48, 0, 48, 0, 16, 48, 0 )
 [sub_resource type="RectangleShape2D" id=246]
 extents = Vector2( 6.5, 23 )
 
-[sub_resource type="AnimatedTexture" id=240]
+[sub_resource type="AnimatedTexture" id=359]
 
-[sub_resource type="Animation" id=241]
+[sub_resource type="Animation" id=360]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame_coords")
@@ -3498,11 +3498,41 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 5 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 91 ]
+}
 
-[sub_resource type="Animation" id=242]
+[sub_resource type="Animation" id=361]
+resource_name = "double-jump"
+length = 0.6
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 12 ), Vector2( 2, 12 ), Vector2( 3, 12 ), Vector2( 4, 12 ) ]
+}
+
+[sub_resource type="Animation" id=362]
 resource_name = "idle"
-length = 1.5
+length = 1.86
 loop = true
+step = 0.154
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -3522,14 +3552,15 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.154, 0.308, 0.462, 0.616, 0.77, 0.924, 1.078, 1.232, 1.386, 1.54, 1.694, 1.848 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 3, 0 ), Vector2( 4, 0 ), Vector2( 5, 0 ), Vector2( 6, 0 ), Vector2( 7, 0 ), Vector2( 8, 0 ), Vector2( 9, 0 ), Vector2( 10, 0 ), Vector2( 11, 0 ), Vector2( 12, 0 ), Vector2( 13, 0 ), Vector2( 14, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 3, 0 ), Vector2( 4, 0 ), Vector2( 5, 0 ), Vector2( 6, 0 ), Vector2( 7, 0 ), Vector2( 8, 0 ), Vector2( 9, 0 ), Vector2( 10, 0 ), Vector2( 11, 0 ), Vector2( 12, 0 ) ]
 }
 
-[sub_resource type="Animation" id=243]
+[sub_resource type="Animation" id=363]
 resource_name = "jump"
+loop = true
 step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame_coords")
@@ -3544,7 +3575,23 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 5 ), Vector2( 2, 5 ), Vector2( 3, 5 ), Vector2( 4, 5 ), Vector2( 5, 5 ) ]
 }
 
-[sub_resource type="Animation" id=244]
+[sub_resource type="Animation" id=364]
+resource_name = "mort"
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 92, 93, 94, 95, 96, 97 ]
+}
+
+[sub_resource type="Animation" id=365]
 resource_name = "run"
 length = 0.6
 loop = true
@@ -3562,7 +3609,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3, 1 ), Vector2( 4, 1 ), Vector2( 5, 1 ), Vector2( 6, 1 ), Vector2( 7, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=245]
+[sub_resource type="RectangleShape2D" id=366]
 extents = Vector2( 9.75, 16 )
 
 [sub_resource type="RectangleShape2D" id=247]
@@ -7108,31 +7155,33 @@ region_rect = Rect2( 67, 29, 51, 56 )
 position = Vector2( 2, 46 )
 shape = SubResource( 246 )
 
-[node name="test" type="KinematicBody2D" parent="."]
-position = Vector2( 55, 405 )
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 460, -439 )
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="test"]
+[node name="Sprite" type="Sprite" parent="player"]
 position = Vector2( 34.5881, 69.5882 )
 scale = Vector2( 1.91176, 1.91176 )
 texture = ExtResource( 3 )
-normal_map = SubResource( 240 )
+normal_map = SubResource( 359 )
 hframes = 13
 vframes = 13
-frame = 65
+frame = 91
 region_enabled = true
-region_rect = Rect2( -1.19857, 3.22582, 419.559, 418.411 )
+region_rect = Rect2( -1.19857, 3.22582, 416.199, 418.411 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="test/Sprite"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/Sprite"]
 root_node = NodePath("../..")
-anims/RESET = SubResource( 241 )
-anims/idle = SubResource( 242 )
-anims/jump = SubResource( 243 )
-anims/run = SubResource( 244 )
+anims/RESET = SubResource( 360 )
+anims/double-jump = SubResource( 361 )
+anims/idle = SubResource( 362 )
+anims/jump = SubResource( 363 )
+anims/mort = SubResource( 364 )
+anims/run = SubResource( 365 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2( 31.5881, 73.5882 )
-shape = SubResource( 245 )
+shape = SubResource( 366 )
 one_way_collision_margin = 0.0
 
 [node name="Death zone" type="Area2D" parent="."]
