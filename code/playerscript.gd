@@ -60,4 +60,5 @@ func change_scene_respawn():
 		
 	if Input.is_action_pressed("respawn"):
 		get_tree().reload_current_scene();
+		
 
